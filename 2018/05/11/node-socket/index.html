@@ -13,11 +13,11 @@
 
     <title>
         
-          好用的 Mac App - Matt&#39;s Blog | 周穎正的部落格
+          Socket.io / Node - Matt&#39;s Blog | 周穎正的部落格
         
     </title>
 
-    <link rel="canonical" href="https://ycj1905.github.io/2018/03/23/macApp/">
+    <link rel="canonical" href="https://ycj1905.github.io/2018/05/11/node-socket/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,16 +165,16 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                          <a class="tag" href="/tags/#meetup" title="meetup">meetup</a>
                         
-                          <a class="tag" href="/tags/#mac" title="mac">mac</a>
+                          <a class="tag" href="/tags/#node.js" title="node.js">node.js</a>
                         
                     </div>
-                    <h1>好用的 Mac App</h1>
+                    <h1>Socket.io / Node</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Matt Jhou on
-                        2018-03-23
+                        2018-05-11
                     </span>
                 </div>
             </div>
@@ -194,40 +194,29 @@
                 post-container">
 
                 <blockquote>
-<p>工欲善其事，必先利其器。<br>以下介紹幾個好用的 App 幫助生活更有效率</p>
+<p>Create Real Time Web App !<br><a href="https://github.com/ycj1905/node-socke-chat" target="_blank" rel="noopener">Node.js sample</a><br><a href="https://github.com/ycj1905/vue-socket-chat" target="_blank" rel="noopener">Vue sample</a></p>
 </blockquote>
-<h2 id="讓開發日常更有效率"><a href="#讓開發日常更有效率" class="headerlink" title="讓開發日常更有效率"></a>讓開發日常更有效率</h2><ul>
-<li><p><a href="https://www.iterm2.com/" target="_blank" rel="noopener">iTerm2</a>    </p>
+<h2 id="Event-Trigger"><a href="#Event-Trigger" class="headerlink" title="Event Trigger"></a>Event Trigger</h2><p><strong>1. Emitting / Listening</strong></p>
 <ul>
-<li>身為一個有效率的工程師, 一定常常使用到terminal。 </li>
-<li>然而預設單調的樣式總會讓人眼花繚亂, iTerm2提供了各種樣式, 幫助工作更有邏輯。</li>
-<li><p>此為我所使用的樣式:<br><img src="iterm.png" alt="alt text" title="iterm2"></p>
-<p>相關設定及細節可參考在社群很活躍的<a href="http://huli.logdown.com/posts/402147-iterm2-zsh-better-environment" target="_blank" rel="noopener">Huli大大</a></p>
+<li><p>Email<br><img src="mail-socket.PNG" alt="alt text" title="reserved event"></p>
+</li>
+<li><p>Chat Room<br><img src="chat-socket.PNG" alt="alt text" title="reserved event"></p>
+</li>
+<li><p>Reserved Event<br><img src="reserved-socket-event.png" alt="alt text" title="reserved event"></p>
 </li>
 </ul>
-</li>
-</ul>
-<ul>
-<li><p><a href="https://www.spectacleapp.com/" target="_blank" rel="noopener">Spectacle</a></p>
-<ul>
-<li>讓你更快速去切割所開啟的應用程式畫面, 下載完後只要幾個指令就可以快速上手</li>
-<li><p>個人學新技術時, 左邊開教學影片<strong>( Option + Command + 左鍵 )</strong>, 右邊為IDE<strong>( Option + Command + 右鍵 )</strong>。 並且不會為佔掉一個桌面的空間</p>
-<p><img src="spectacle.png" alt="alt text" title="spectacle"></p>
-<p>可以參考<a href="https://www.youtube.com/watch?v=m0nakIJLR9k" target="_blank" rel="noopener">Youtube 影片</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="好用小物"><a href="#好用小物" class="headerlink" title="好用小物"></a>好用小物</h2><ul>
-<li><a href="https://freemacsoft.net/appcleaner/" target="_blank" rel="noopener">AppCleaner</a><ul>
-<li>深度清理不需要的應用程式, 不要留下垃圾!</li>
-</ul>
-</li>
-<li><a href="https://caffeine.en.softonic.com/mac?ex=REG-60.1" target="_blank" rel="noopener">Caffeine</a><ul>
-<li>讓電腦保持清醒</li>
-</ul>
-</li>
-</ul>
+<p><strong>2. Broadcasting</strong></p>
+<ol>
+<li>Sets a modifier for a subsequent event emission that the event data will only be broadcast to every sockets but the sender</li>
+</ol>
+<h2 id="Basic-Structure"><a href="#Basic-Structure" class="headerlink" title="Basic Structure"></a>Basic Structure</h2><p><strong>0.Before Coding</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> <span class="selector-tag">i</span> express</span><br><span class="line"><span class="variable">$npm</span> <span class="selector-tag">i</span> socket.io</span><br></pre></td></tr></table></figure></p>
+<p><strong>1.Basic Node Sample</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> server = http.createServer(app);</span><br><span class="line"><span class="keyword">var</span> io = socketIO(server);</span><br><span class="line"></span><br><span class="line">io.on(<span class="string">'connection'</span>, (socket) =&gt; &#123;</span><br><span class="line">  socket.emit(<span class="string">'newMessage'</span>, generateMessage(<span class="string">'Admin'</span>, <span class="string">'Welcome to the chat app'</span>));</span><br><span class="line"></span><br><span class="line">  socket.broadcast.emit(<span class="string">'newMessage'</span>, generateMessage(<span class="string">'Admin'</span>, <span class="string">'New user joined'</span>));</span><br><span class="line"></span><br><span class="line">  socket.on(<span class="string">'createMessage'</span>, (message, callback) =&gt; &#123;</span><br><span class="line">    io.emit(<span class="string">'newMessage'</span>, generateMessage(message.from, message.text));</span><br><span class="line">    callback(<span class="string">'This is from the server.'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  socket.on(<span class="string">'disconnect'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'User was disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server is up`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.Basic Client Sample</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> socket = io();</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Connected to server'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">'disconnect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Disconnected from server'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">'newMessage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'newMessage'</span>, message);</span><br><span class="line">  <span class="keyword">var</span> li = jQuery(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">  li.text(<span class="string">`<span class="subst">$&#123;message.<span class="keyword">from</span>&#125;</span>: <span class="subst">$&#123;message.text&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">  jQuery(<span class="string">'#messages'</span>).append(li);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">jQuery(<span class="string">'#message-form'</span>).on(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  socket.emit(<span class="string">'createMessage'</span>, &#123;</span><br><span class="line">    <span class="keyword">from</span>: <span class="string">'User'</span>,</span><br><span class="line">    text: jQuery(<span class="string">'[name=message]'</span>).val()</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Vue-js-with-socket"><a href="#Vue-js-with-socket" class="headerlink" title="Vue.js with socket"></a>Vue.js with socket</h2><p><a href="https://github.com/MetinSeylan/Vue-Socket.io" target="_blank" rel="noopener">Vue-Socket.io</a><br><strong>0. Before Coding</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">npm install vue-socket.io --save</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>1. main.js</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> socketio <span class="keyword">from</span> <span class="string">'socket.io-client'</span>;</span><br><span class="line">Vue.use(VueSocketio, socketio(<span class="string">'http://localhost:3000'</span>));</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. Sign.Vue (Emmit Event)</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    connect() &#123;</span><br><span class="line">      <span class="keyword">var</span> param = &#123;</span><br><span class="line">        name: <span class="keyword">this</span>.userName,</span><br><span class="line">        room: <span class="keyword">this</span>.chatRoom</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="keyword">this</span>.$socket.emit(<span class="string">"join"</span>, param, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">this</span>.$router.push(<span class="string">"/chatroom"</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>3. Chat.Vue (Listen Event)</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sockets: &#123;</span><br><span class="line">    updateUserList(s)&#123;</span><br><span class="line">      <span class="keyword">this</span>.users = s;</span><br><span class="line">    &#125;,</span><br><span class="line">    newMessage(s)&#123;</span><br><span class="line">      <span class="keyword">this</span>.msgList.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h2 id="可看看"><a href="#可看看" class="headerlink" title="可看看"></a>可看看</h2><p><a href="https://www.zhihu.com/question/20215561" target="_blank" rel="noopener">Websocket 科普</a><br><a href="https://socket.io/docs/emit-cheatsheet/" target="_blank" rel="noopener">Emit cheatsheet</a></p>
 
 
                 <hr>
@@ -236,13 +225,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/05/11/node-socket/" data-toggle="tooltip" data-placement="top" title="Socket.io / Node">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2018/03/23/unzip/" data-toggle="tooltip" data-placement="top" title="解救壞掉的 Zip">Next Post &rarr;</a>
+                            <a href="/2018/03/23/macApp/" data-toggle="tooltip" data-placement="top" title="好用的 Mac App">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -275,9 +260,9 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#tool" title="tool">tool</a>
+                          <a class="tag" href="/tags/#meetup" title="meetup">meetup</a>
                         
-                          <a class="tag" href="/tags/#mac" title="mac">mac</a>
+                          <a class="tag" href="/tags/#node.js" title="node.js">node.js</a>
                         
                     </div>
                 </section>
@@ -298,8 +283,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "mattjhou";
-    var disqus_identifier = "https://ycj1905.github.io/2018/03/23/macApp/";
-    var disqus_url = "https://ycj1905.github.io/2018/03/23/macApp/";
+    var disqus_identifier = "https://ycj1905.github.io/2018/05/11/node-socket/";
+    var disqus_url = "https://ycj1905.github.io/2018/05/11/node-socket/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

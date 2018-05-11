@@ -90,14 +90,14 @@
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
@@ -198,7 +198,7 @@
                 post-container">
 
                 <blockquote>
-<p>對壞掉之zip進行解壓縮, 解救一些檔案 !<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>zip -FF broken.zip --out pleasework.zip</span><br></pre></td></tr></table></figure></p>
+<p>對壞掉之zip進行解壓縮, 解救一些檔案 !<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">zip -FF broken.zip --out pleasework.zip</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h2 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h2><p>工作開發的 Hybrid App, 使用IBM MobileFirst SDK 。<br>iOS 在 direct update 過程至 onFinish時, callBack 丟出的 status為 ERROR_UNZIPPING。</p>
 <h2 id="找問題"><a href="#找問題" class="headerlink" title="找問題"></a>找問題</h2><p><strong>1. 下載 App 並解壓縮 container</strong></p>
@@ -210,12 +210,12 @@
 </ul>
 <p><strong>2. 強制解壓縮, 查看內容</strong></p>
 <ul>
-<li>以指令解壓縮 <strong>(出現錯誤)</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>zip update.zip</span><br></pre></td></tr></table></figure>
+<li>以指令解壓縮 <strong>(出現錯誤)</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">zip update.zip</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="command-2.png" alt="alt text" title="comman2"></p>
 <ul>
-<li>強制解壓縮, 解壓縮結果可能有掉封包、檔案不完全 <strong>(出現錯誤)</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>zip -FF update.zip --out pleasework.zip</span><br></pre></td></tr></table></figure>
+<li>強制解壓縮, 解壓縮結果可能有掉封包、檔案不完全 <strong>(出現錯誤)</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">zip -FF update.zip --out pleasework.zip</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="command-3.png" alt="alt text" title="comman3"></p>
